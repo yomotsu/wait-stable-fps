@@ -14,7 +14,7 @@
 	var TEST_FRAME_LENGTH = 10;
 	var DIVISOR = 1 / TEST_FRAME_LENGTH; // resolve() when average FPS reached 30FPS
 
-	var index = waitStableFps = function waitStableFps() {
+	var waitStableFps = function waitStableFps() {
 	  var recentDeltaTimeList = new Array(TEST_FRAME_LENGTH).fill(Infinity);
 	  return new Promise(function (resolve) {
 	    var lastTime = performance.now();
@@ -41,6 +41,6 @@
 	  });
 	};
 
-	return index;
+	return waitStableFps;
 
 })));

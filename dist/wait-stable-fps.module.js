@@ -8,7 +8,7 @@ var DELTA_FPS_30 = 1000 / 30;
 var TEST_FRAME_LENGTH = 10;
 var DIVISOR = 1 / TEST_FRAME_LENGTH; // resolve() when average FPS reached 30FPS
 
-var index = waitStableFps = function waitStableFps() {
+var waitStableFps = function waitStableFps() {
   var recentDeltaTimeList = new Array(TEST_FRAME_LENGTH).fill(Infinity);
   return new Promise(function (resolve) {
     var lastTime = performance.now();
@@ -35,4 +35,4 @@ var index = waitStableFps = function waitStableFps() {
   });
 };
 
-export default index;
+export default waitStableFps;

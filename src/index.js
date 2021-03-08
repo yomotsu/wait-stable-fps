@@ -3,7 +3,7 @@ const TEST_FRAME_LENGTH = 10;
 const DIVISOR = 1 / TEST_FRAME_LENGTH;
 
 // resolve() when average FPS reached 30FPS
-export default waitStableFps = () => {
+const waitStableFps = () => {
 
 	const recentDeltaTimeList = ( new Array( TEST_FRAME_LENGTH ) ).fill( Infinity );
 
@@ -40,3 +40,5 @@ export default waitStableFps = () => {
 	} );
 
 };
+
+export default waitStableFps;

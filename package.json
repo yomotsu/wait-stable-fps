@@ -1,0 +1,26 @@
+{
+  "name": "wait-stable-fps",
+  "version": "0.0.0",
+  "author": "Yomotsu",
+  "license": "MIT",
+  "main": "dist/wait-stable-fps.js",
+  "jsnext:main": "dist/wait-stable-fps.module.js",
+  "module": "dist/wait-stable-fps.module.js",
+  "repository": "yomotsu/wait-stable-fps",
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@rollup/plugin-babel": "^5.3.0",
+    "rollup": "^2.40.0",
+    "terser": "^5.6.0"
+  },
+  "scripts": {
+    "dev": "rollup --config --watch",
+    "build": "rollup --config && terser dist/wait-stable-fps.js -o dist/wait-stable-fps.min.js --comments '/^!/'"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 11"
+  ],
+  "keywords": []
+}

@@ -1,5 +1,6 @@
-import babel from '@rollup/plugin-babel';
-import pkg from './package.json';
+import pkg from './package.json' assert { type: "json" };
+import typescript from 'typescript';
+import rollupTypescript from '@rollup/plugin-typescript';
 
 const license = `/*!
  * ${ pkg.name }
@@ -9,7 +10,7 @@ const license = `/*!
  */`;
 
 export default {
-	input: 'src/index.js',
+	input: 'src/index.ts',
 	output: [
 		{
 			format: 'umd',
@@ -25,8 +26,7 @@ export default {
 			indent: '\t',
 		}
 	],
-	plugins: [ babel( {
-		presets: [ '@babel/preset-env' ],
-		babelHelpers: 'bundled'
-	} ) ],
+	plugins: [
+		rollupTypescript( { typescript } ),
+	],
 };

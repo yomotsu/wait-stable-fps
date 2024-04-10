@@ -3,7 +3,7 @@ const TEST_FRAME_LENGTH = 10;
 const DIVISOR = 1 / TEST_FRAME_LENGTH;
 
 // resolve() when average FPS reached 30FPS
-const waitStableFps = () => {
+const waitStableFps = (): Promise<void> => {
 
 	const recentDeltaTimeList = ( new Array( TEST_FRAME_LENGTH ) ).fill( Infinity );
 
@@ -23,7 +23,7 @@ const waitStableFps = () => {
 
 			if (
 				averageFPS < DELTA_FPS_30 ||
-				document.readyState === 'loaded'
+				document.readyState === 'complete'
 			) {
 
 				resolve();
